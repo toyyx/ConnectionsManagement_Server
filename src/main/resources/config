@@ -1,0 +1,5 @@
+API_KEY=6nv6bmhGcRFIx4NEPKwldsOm
+SECRET_KEY=ALK8fAGeB5N2s5QN8gEKbrYljP9EzITW
+MySQL_URL=jdbc:mysql://121.199.71.143:3306/connections
+DB_username=app_user
+DB_password=app2024connections

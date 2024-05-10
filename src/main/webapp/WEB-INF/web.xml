@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+    <servlet>
+        <servlet-name>DBManager</servlet-name>
+        <servlet-class>com.example.connection_server.DBManager</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DBManager</servlet-name>
+        <url-pattern>/DBManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.example.connection_server.User.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.example.connection_server.User.RegisterServlet</servlet-class>
+        <multipart-config>
+            <!-- 设置允许上传文件的最大大小，单位为字节 -->
+            <max-file-size>5242880</max-file-size>
+            <!-- 设置整个请求的最大大小，包括文件和其他表单数据，单位为字节 -->
+            <max-request-size>10485760</max-request-size>
+            <!-- 设置内存中的缓冲区大小，当上传文件大小超过此值时，将会写入临时文件，单位为字节 -->
+            <file-size-threshold>0</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateUserServlet</servlet-name>
+        <servlet-class>com.example.connection_server.User.UpdateUserServlet</servlet-class>
+        <multipart-config>
+            <!-- 设置允许上传文件的最大大小，单位为字节 -->
+            <max-file-size>5242880</max-file-size>
+            <!-- 设置整个请求的最大大小，包括文件和其他表单数据，单位为字节 -->
+            <max-request-size>10485760</max-request-size>
+            <!-- 设置内存中的缓冲区大小，当上传文件大小超过此值时，将会写入临时文件，单位为字节 -->
+            <file-size-threshold>0</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateUserServlet</servlet-name>
+        <url-pattern>/UpdateUserServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SearchRelationsServlet</servlet-name>
+        <servlet-class>com.example.connection_server.Relation.SearchRelationsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchRelationsServlet</servlet-name>
+        <url-pattern>/SearchRelationsServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddRelationServlet</servlet-name>
+        <servlet-class>com.example.connection_server.Relation.AddRelationServlet</servlet-class>
+        <multipart-config>
+            <!-- 设置允许上传文件的最大大小，单位为字节 -->
+            <max-file-size>5242880</max-file-size>
+            <!-- 设置整个请求的最大大小，包括文件和其他表单数据，单位为字节 -->
+            <max-request-size>10485760</max-request-size>
+            <!-- 设置内存中的缓冲区大小，当上传文件大小超过此值时，将会写入临时文件，单位为字节 -->
+            <file-size-threshold>0</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddRelationServlet</servlet-name>
+        <url-pattern>/AddRelationServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteRelationServlet</servlet-name>
+        <servlet-class>com.example.connection_server.Relation.DeleteRelationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteRelationServlet</servlet-name>
+        <url-pattern>/DeleteRelationServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateRelationServlet</servlet-name>
+        <servlet-class>com.example.connection_server.Relation.UpdateRelationServlet</servlet-class>
+        <multipart-config>
+            <!-- 设置允许上传文件的最大大小，单位为字节 -->
+            <max-file-size>5242880</max-file-size>
+            <!-- 设置整个请求的最大大小，包括文件和其他表单数据，单位为字节 -->
+            <max-request-size>10485760</max-request-size>
+            <!-- 设置内存中的缓冲区大小，当上传文件大小超过此值时，将会写入临时文件，单位为字节 -->
+            <file-size-threshold>0</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateRelationServlet</servlet-name>
+        <url-pattern>/UpdateRelationServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddCommunicationServlet</servlet-name>
+        <servlet-class>com.example.connection_server.Communication.AddCommunicationServlet</servlet-class>
+        <multipart-config>
+            <!-- 设置允许上传文件的最大大小，单位为字节 -->
+            <max-file-size>5242880</max-file-size>
+            <!-- 设置整个请求的最大大小，包括文件和其他表单数据，单位为字节 -->
+            <max-request-size>10485760</max-request-size>
+            <!-- 设置内存中的缓冲区大小，当上传文件大小超过此值时，将会写入临时文件，单位为字节 -->
+            <file-size-threshold>0</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddCommunicationServlet</servlet-name>
+        <url-pattern>/AddCommunicationServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteCommunicationServlet</servlet-name>
+        <servlet-class>com.example.connection_server.Communication.DeleteCommunicationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteCommunicationServlet</servlet-name>
+        <url-pattern>/DeleteCommunicationServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateCommunicationServlet</servlet-name>
+        <servlet-class>com.example.connection_server.Communication.UpdateCommunicationServlet</servlet-class>
+        <multipart-config>
+            <!-- 设置允许上传文件的最大大小，单位为字节 -->
+            <max-file-size>5242880</max-file-size>
+            <!-- 设置整个请求的最大大小，包括文件和其他表单数据，单位为字节 -->
+            <max-request-size>10485760</max-request-size>
+            <!-- 设置内存中的缓冲区大小，当上传文件大小超过此值时，将会写入临时文件，单位为字节 -->
+            <file-size-threshold>0</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateCommunicationServlet</servlet-name>
+        <url-pattern>/UpdateCommunicationServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SearchCommunicationsServlet</servlet-name>
+        <servlet-class>com.example.connection_server.Communication.SearchCommunicationsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchCommunicationsServlet</servlet-name>
+        <url-pattern>/SearchCommunicationsServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FaceDetectServlet</servlet-name>
+        <servlet-class>com.example.connection_server.Face.FaceDetectServlet</servlet-class>
+        <multipart-config>
+            <!-- 设置允许上传文件的最大大小，单位为字节 -->
+            <max-file-size>5242880</max-file-size>
+            <!-- 设置整个请求的最大大小，包括文件和其他表单数据，单位为字节 -->
+            <max-request-size>10485760</max-request-size>
+            <!-- 设置内存中的缓冲区大小，当上传文件大小超过此值时，将会写入临时文件，单位为字节 -->
+            <file-size-threshold>0</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FaceDetectServlet</servlet-name>
+        <url-pattern>/FaceDetectServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FaceMatchServlet</servlet-name>
+        <servlet-class>com.example.connection_server.Face.FaceMatchServlet</servlet-class>
+        <multipart-config>
+            <!-- 设置允许上传文件的最大大小，单位为字节 -->
+            <max-file-size>5242880</max-file-size>
+            <!-- 设置整个请求的最大大小，包括文件和其他表单数据，单位为字节 -->
+            <max-request-size>10485760</max-request-size>
+            <!-- 设置内存中的缓冲区大小，当上传文件大小超过此值时，将会写入临时文件，单位为字节 -->
+            <file-size-threshold>0</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FaceMatchServlet</servlet-name>
+        <url-pattern>/FaceMatchServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FaceSearch_1_N_Servlet</servlet-name>
+        <servlet-class>com.example.connection_server.Face.FaceSearch_1_N_Servlet</servlet-class>
+        <multipart-config>
+            <!-- 设置允许上传文件的最大大小，单位为字节 -->
+            <max-file-size>5242880</max-file-size>
+            <!-- 设置整个请求的最大大小，包括文件和其他表单数据，单位为字节 -->
+            <max-request-size>10485760</max-request-size>
+            <!-- 设置内存中的缓冲区大小，当上传文件大小超过此值时，将会写入临时文件，单位为字节 -->
+            <file-size-threshold>0</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FaceSearch_1_N_Servlet</servlet-name>
+        <url-pattern>/FaceSearch_1_N_Servlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FaceSearch_M_N_Servlet</servlet-name>
+        <servlet-class>com.example.connection_server.Face.FaceSearch_M_N_Servlet</servlet-class>
+        <multipart-config>
+            <!-- 设置允许上传文件的最大大小，单位为字节 -->
+            <max-file-size>5242880</max-file-size>
+            <!-- 设置整个请求的最大大小，包括文件和其他表单数据，单位为字节 -->
+            <max-request-size>10485760</max-request-size>
+            <!-- 设置内存中的缓冲区大小，当上传文件大小超过此值时，将会写入临时文件，单位为字节 -->
+            <file-size-threshold>0</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FaceSearch_M_N_Servlet</servlet-name>
+        <url-pattern>/FaceSearch_M_N_Servlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>
