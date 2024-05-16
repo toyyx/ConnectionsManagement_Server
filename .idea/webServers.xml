@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="41b761b1-6e99-492f-8b2f-c4ccb7c98146" name="阿里云">
-        <fileTransfer rootFolder="/usr/java/tomcat/apache-tomcat-10.1.19/webapps" accessType="SFTP" host="121.199.71.143" port="22" sshConfigId="ada55634-e373-41b5-983f-98a275c75df5" sshConfig="root@121.199.71.143:22 password">
+        <fileTransfer rootFolder="/usr/java/tomcat/apache-tomcat-10.1.19/webapps" accessType="SFTP" host="47.103.72.193" port="22" sshConfigId="ada55634-e373-41b5-983f-98a275c75df5" sshConfig="root@47.103.72.193:22 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

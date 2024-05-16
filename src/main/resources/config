@@ -1,5 +1,7 @@
 API_KEY=6nv6bmhGcRFIx4NEPKwldsOm
 SECRET_KEY=ALK8fAGeB5N2s5QN8gEKbrYljP9EzITW
-MySQL_URL=jdbc:mysql://121.199.71.143:3306/connections
+MySQL_URL=jdbc:mysql://47.103.72.193:3306/connections
 DB_username=app_user
 DB_password=app2024connections
+
+CREATE USER 'job_management_user'@'%' IDENTIFIED BY 'job2024management'

@@ -198,6 +198,33 @@ public class UserDAO {
         }
     }
 
+    //根据图片路径搜索人物ID
+    public static String SearchRelationImagePath(String personId){
+        // 建立数据库连接
+        Connection connection = DBManager.getConnection();
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            // 构造 SQL 查询语句
+            String sql = "SELECT * FROM PersonalRelations WHERE personId = ?";
+            // 创建 PreparedStatement 对象
+            statement = connection.prepareStatement(sql);
+            // 设置查询参数
+            statement.setString(1, personId);
+            // 执行查询
+            resultSet = statement.executeQuery();
+            if(resultSet.next()){
+                return resultSet.getString("image_path");
+            }else{
+                return null;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            DBManager.closeAll(connection, statement, resultSet);               //关闭连接
+        }
+    }
+
     //根据人物ID搜索用户ID
     public static int SearchUserId(String personId){
         // 建立数据库连接
@@ -255,10 +282,14 @@ public class UserDAO {
         }
         //添加关系成功，准备添加人脸库用户
         if(rowsInserted > 0){
-            baiduAI_Face.faceAdd(Integer.toString(newRelation.getUserId()),baiduAI_Face.getFileContentAsBase64(newRelation.getImage_path(),false),Integer.toString(SearchRelationId(newRelation.getImage_path())),newRelation.getName());
-        }
-        // 返回注册结果给用户
-        return rowsInserted > 0;
+            if(baiduAI_Face.faceAdd(Integer.toString(newRelation.getUserId()),baiduAI_Face.getFileContentAsBase64(newRelation.getImage_path(),false),Integer.toString(SearchRelationId(newRelation.getImage_path())),newRelation.getName())){
+                return true;
+            }else{
+                DeleteRelation(Integer.toString(SearchRelationId(newRelation.getImage_path())));
+                return false;
+            }
+        }else
+            return false;
     }
 
     //删除人际关系
@@ -268,6 +299,7 @@ public class UserDAO {
         Connection connection = DBManager.getConnection();
         PreparedStatement statement = null;
         int rowsInserted;
+        String filepath=SearchRelationImagePath(personId);
         try {
             // 构造 SQL 查询语句
             String sql = "DELETE FROM personalrelations WHERE personId = ?";
@@ -286,6 +318,9 @@ public class UserDAO {
         //删除关系成功，准备删除人脸库用户
         if(rowsInserted > 0){
             baiduAI_Face.userDelete(Integer.toString(userId),personId);
+            if(filepath!=null){
+                DeleteImage(filepath);
+            }
         }
         // 返回注册结果给用户
         return rowsInserted > 0;
